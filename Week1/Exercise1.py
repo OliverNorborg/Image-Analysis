@@ -134,3 +134,6 @@ r2 = int(rows/2)
 img_ardeche[:r2] = [0,255,0]
 io.imshow(img_ardeche)
 io.show()
+
+
+"""Exercise 13 - resclae and resize image"""
