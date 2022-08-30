@@ -7,6 +7,10 @@ Created on Tue Aug 30 15:53:52 2022
 """
 
 import numpy as np
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
 in_dir = "data/"
 txt_name = "irisdata.txt"
 iris_data = np.loadtxt(in_dir + txt_name, comments="%")
@@ -47,6 +51,19 @@ Cov_length = (1/(n_obs - 1)) * length_product
 Cov_width = (1/(n_obs - 1)) * width_product
 print("Covariance for the length between sepal and petal is: ", Cov_length)
 print("Covariance for the width between sepal and petal is: ", Cov_width)
+
+"""Exercise 4 - """
+
+plt.figure() # Added this to make sure that the figure appear
+# Transform the data into a Pandas dataframe
+d = pd.DataFrame(x, columns=['Sepal length', 'Sepal width','Petal length', 'Petal width'])
+sns.pairplot(d)
+plt.show()
+
+
+
+
+
 
 
 
