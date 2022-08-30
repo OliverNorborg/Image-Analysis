@@ -180,40 +180,56 @@ import pydicom as dicom
 
 
 
-"""Exercise 19 - DTU Sign - RGB"""
-im_org = io.imread("data/DTUSign1.jpg")
-r_comp = im_org[:, :, 0]
-g_comp = im_org[:, :, 1]
-b_comp = im_org[:, :, 2]
-#Display the red component
-io.imshow(r_comp)
-plt.title('DTU sign image (Red)')
-io.show()
-#Display the green component
-io.imshow(g_comp)
-plt.title('DTU sign image (Green)')
-io.show()
-#Display the blue component 
-io.imshow(b_comp)
-plt.title('DTU sign image (Blue)')
+# """Exercise 19 - DTU Sign - RGB"""
+# im_org = io.imread("data/DTUSign1.jpg")
+# io.imshow(im_org)
+# plt.title('DTU sign image')
+# io.show()
+
+
+# r_comp = im_org[:, :, 0]
+# g_comp = im_org[:, :, 1]
+# b_comp = im_org[:, :, 2]
+# #Display the red component
+# io.imshow(r_comp)
+# plt.title('DTU sign image (Red)')
+# io.show()
+# #Display the green component
+# io.imshow(g_comp)
+# plt.title('DTU sign image (Green)')
+# io.show()
+# #Display the blue component 
+# io.imshow(b_comp)
+# plt.title('DTU sign image (Blue)')
+# io.show()
+
+# """Exercise 20 - black rectange (NumPy slicing)"""
+
+# black_square = im_org
+# black_square[500:1000, 800:1500, :] = 0
+# io.imshow(black_square)
+# plt.title('DTU sign with a black square')
+# io.show()
+
+# #Save the photo using io.imsave
+
+
+# """Exercise 21 - Create blue rectangle """
+# blue_square = im_org
+# blue_square[1550:1750, 2300:2800, 0:2] = 0
+# io.imshow(blue_square)
+# plt.title('DTU sign with a blue square')
+# io.show()
+
+"""Exercise 22"""
+img_bones = io.imread("data/metacarpals.png")
+io.imshow(img_bones)
+plt.title('X-ray original')
 io.show()
 
-"""Exercise 20 - black rectange (NumPy slicing)"""
 
-black_square = im_org
-black_square[500:1000, 800:1500, :] = 0
-io.imshow(black_square)
-plt.title('DTU sign with a black square')
-io.show()
 
-#Save the photo using io.imsave
 
-"""Exercise 21 - Create blue rectangle """
-blue_square = im_org
-blue_square[1500:1700, 2300:2600, 0:1] = 0
-io.imshow(blue_square)
-plt.title('DTU sign with a blue square')
-io.show()
 
 
 
