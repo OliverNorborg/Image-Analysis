@@ -37,4 +37,16 @@ print("Variance of petal width: ", var_pet_w)
 
 """Exercise 3 - Covariance"""
 
+length_product = 0
+width_product = 0 
+for i in range(n_obs):
+    length_product = length_product + (sep_l[i] * pet_l[i])
+    width_product = width_product + (sep_w[i] * pet_w[i])
+
+Cov_length = (1/(n_obs - 1)) * length_product
+Cov_width = (1/(n_obs - 1)) * width_product
+print("Covariance for the length between sepal and petal is: ", Cov_length)
+print("Covariance for the width between sepal and petal is: ", Cov_width)
+
+
 
