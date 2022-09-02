@@ -61,12 +61,3 @@ sns.pairplot(d)
 plt.show()
 
 
-
-
-
-
-
-
-
-
-
