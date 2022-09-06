@@ -62,14 +62,14 @@ print("Covariance for the width between sepal and petal is: ", Cov_width)
 
 """Exercise 4 - """
 
-# plt.figure() # Added this to make sure that the figure appear
-# # Transform the data into a Pandas dataframe
-# d = pd.DataFrame(x, columns=['Sepal length', 'Sepal width','Petal length', 'Petal width'])
-# sns.pairplot(d)
+plt.figure() # Added this to make sure that the figure appear
+# Transform the data into a Pandas dataframe
+d = pd.DataFrame(x, columns=['Sepal length', 'Sepal width','Petal length', 'Petal width'])
+sns.pairplot(d)
 
-# #Saves the image -uncomment to save
-# #plt.savefig('pairplot.png')
-# plt.show()
+#Saves the image -uncomment to save
+#plt.savefig('pairplot.png')
+plt.show()
 
 # What measurements are related and which ones are not-related? 
 #   Sepal elngth a width seem to have a linear correlation
@@ -101,14 +101,18 @@ print(C_sep_matrix)
 print("np.cov result:")
 print(np.cov(sep_l_data,sep_w_data))
 
+c_x = np.cov(data.T)
+
 
 """Exercise 6 - Principle componets"""
 #eig(covaraince matrix), which covaraince matrix?
-#values, vectors = np.linalg.eig(c_x)
+values, vectors = np.linalg.eig(c_x)
 
 """Exercise 7 - """
 #Values are found in the above exercise
-v_norm = values / values.sum() * 100
+
+v_norm = values.cumsum() / values.sum() * 100
+v_norm = np.insert(v_norm,0,0)
 plt.plot(v_norm)
 plt.xlabel('Principal component')
 plt.ylabel('Percent explained variance')
@@ -117,6 +121,10 @@ plt.show()
 
 """Exercise 8 - Projecting data onto PCA space"""
 pc_proj = vectors.T.dot(data.T)
+# plt.figure()
+# d2 = pd.DataFrame(pc_proj)
+# sns.pairplot(d2)
+# plt.show()
 
 """Exercise 9 - A different way to find PCA"""
 pca = decomposition.PCA()
@@ -125,6 +133,7 @@ values_pca = pca.explained_variance_
 exp_var_ratio = pca.explained_variance_ratio_
 vectors_pca = pca.components_
 data_transform = pca.transform(data)
+
 
 
 
